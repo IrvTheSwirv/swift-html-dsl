@@ -22,39 +22,6 @@ public enum Node :Equatable {
 	case trim
 }
 
-extension Node: ExpressibleByArrayLiteral {
-	public init(arrayLiteral elements: Node...) {
-		let flattened = elements
-			.flatMap { node -> [Node] in
-				switch node {
-				case .fragment(let children):
-					return children
-				default:
-					return [node]
-				}
-		}
-
-		self = .fragment(flattened)
-	}
-}
-
-extension Node: ExpressibleByStringLiteral {
-	public init(stringLiteral value: String){
-		self = .text(value)
-	}
-}
-
-private extension Node {
-	var isFragment: Bool {
-		switch self {
-		case .fragment:
-			return true
-		default:
-			return false
-		}
-	}
-}
-
 extension Node: TextOutputStreamable {
 	public func write<Target>(to target: inout Target) where Target : TextOutputStream {
 		var flag = false
@@ -91,13 +58,16 @@ extension Node: TextOutputStreamable {
 				target.write("\"")
 			}
 
-			if let child = child {
+			
+			
+			if hasChildren(node: child!) {
+				
 				target.write(">")
 
 				didVisitTrim = false
 
 				depth += 1
-				child.write(to: &target, depth: &depth, didVisitTrim: &didVisitTrim)
+				child?.write(to: &target, depth: &depth, didVisitTrim: &didVisitTrim)
 				depth -= 1
 
 				if !didVisitTrim {
@@ -132,6 +102,49 @@ extension Node: TextOutputStreamable {
 			}
 		case .trim:
 			break
+		}
+	}
+}
+extension Node: ExpressibleByArrayLiteral {
+	public init(arrayLiteral elements: Node...) {
+		let flattened = elements
+			.flatMap { node -> [Node] in
+				switch node {
+				case .fragment(let children):
+					return children
+				default:
+					return [node]
+				}
+		}
+
+		self = .fragment(flattened)
+	}
+}
+
+extension Node: ExpressibleByStringLiteral {
+	public init(stringLiteral value: String){
+		self = .text(value)
+	}
+}
+
+private extension Node {
+	var isFragment: Bool {
+		switch self {
+		case .fragment:
+			return true
+		default:
+			return false
+		}
+	}
+}
+
+private extension Node {
+	func hasChildren(node: Node) -> Bool {
+		switch node {
+		case .fragment(let children):
+			return children.count > 0
+			default:
+				return false
 		}
 	}
 }

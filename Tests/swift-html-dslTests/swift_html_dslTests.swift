@@ -41,7 +41,7 @@ final class swift_html_dslTests: XCTestCase {
 						}
 					}
 				}
-				
+				br()
 			}
 			
 			div()
