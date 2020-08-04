@@ -2,7 +2,7 @@
 
 This is pretty much a WIP as part of something I'm working on. Wanting to build an extremely fast and lightweight HTML generator but using SwiftUI type code rather than using a template engine. 
 
-I don't intend this to be a feature complete library covering the entire HTML spec initially but may get there eventually. But for now it siuts my needs to be able to use:
+I don't intend this to be a feature complete library covering the entire HTML spec initially but may get there eventually. But for now it suits my needs to be able to use:
 
 ```swift
 
@@ -13,7 +13,7 @@ let doc = html {
 	}
 	
 	body {
-		heder {
+		header {
 			h1 {
 				"Hello HTML DSL World" 
 			}
