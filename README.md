@@ -13,7 +13,7 @@ let doc = html {
 	}
 	
 	body {
-		heder {
+		header {
 			h1 {
 				"Hello HTML DSL World" 
 			}
