@@ -14,28 +14,28 @@ public func html(
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 	
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["lang"] = lang
+	attr["lang"] = lang
 	
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("html", attributes, children().asNode())
+	return .element("html", attr, children().asNode())
 }
 
 public func head(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("head", attributes, children().asNode())
+	return .element("head", attr, children().asNode())
 }
 
 public func body(
@@ -45,15 +45,15 @@ public func body(
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 	
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 	
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("body", attributes, children().asNode())
+	return .element("body", attr, children().asNode())
 }
 
 public func div(
@@ -62,16 +62,16 @@ public func div(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 
-	attributes["class"] = `class`
-	attributes["id"] = id
+	attr["class"] = `class`
+	attr["id"] = id
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("div", attributes, children().asNode())
+	return .element("div", attr, children().asNode())
 }
 
 public func h1(
@@ -79,15 +79,15 @@ public func h1(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("h1", attributes, children().asNode())
+	return .element("h1", attr, children().asNode())
 }
 
 public func h2(
@@ -95,15 +95,15 @@ public func h2(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("h2", attributes, children().asNode())
+	return .element("h2", attr, children().asNode())
 }
 
 public func title(
@@ -111,15 +111,15 @@ public func title(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("title", attributes, children().asNode())
+	return .element("title", attr, children().asNode())
 }
 
 public func canvas(
@@ -130,18 +130,18 @@ public func canvas(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
-	attributes["width"] = width
-	attributes["height"] = height
-	attributes["style"] = style
+	attr["class"] = `class`
+	attr["width"] = width
+	attr["height"] = height
+	attr["style"] = style
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("canvas", attributes, children().asNode())
+	return .element("canvas", attr, children().asNode())
 }
 
 public func nav(
@@ -149,15 +149,15 @@ public func nav(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("nav", attributes, children().asNode())
+	return .element("nav", attr, children().asNode())
 }
 
 public func a(
@@ -166,16 +166,16 @@ public func a(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["href"] = href
-	attributes["class"] = `class`
+	attr["href"] = href
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("a", attributes, children().asNode())
+	return .element("a", attr, children().asNode())
 }
 
 public func link(
@@ -185,17 +185,17 @@ public func link(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["style"] = style
-	attributes["rel"] = rel
-	attributes["href"] = href
+	attr["style"] = style
+	attr["rel"] = rel
+	attr["href"] = href
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("link", attributes, children().asNode())
+	return .element("link", attr, children().asNode())
 }
 
 public func ul(
@@ -203,15 +203,15 @@ public func ul(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("ul", attributes, children().asNode())
+	return .element("ul", attr, children().asNode())
 }
 
 public func li(
@@ -219,15 +219,15 @@ public func li(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("li", attributes, children().asNode())
+	return .element("li", attr, children().asNode())
 }
 
 public func header(
@@ -235,13 +235,13 @@ public func header(
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
-	var attributes: [String: String] = [:]
+	var attr: [String: String] = [:]
 	
-	attributes["class"] = `class`
+	attr["class"] = `class`
 
 	for (key, value) in attributes {
-		attributes[key] = value
+		attr[key] = value
 	}
 	
-	return .element("header", attributes, children().asNode())
+	return .element("header", attr, children().asNode())
 }
