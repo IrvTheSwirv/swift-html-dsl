@@ -343,3 +343,16 @@ public func p(
 	
 	return .element("p", attr, children().asNode())
 }
+
+public func br(
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("br", attr, children().asNode())
+}
