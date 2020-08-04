@@ -182,6 +182,8 @@ public func link(
 	style : String? = nil,
 	rel : String? = nil,
 	href : String? = nil,
+	integrity : String? = nil,
+	crossorigin : String? = nil,
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
@@ -190,6 +192,8 @@ public func link(
 	attr["style"] = style
 	attr["rel"] = rel
 	attr["href"] = href
+	attr["integrity"] = integrity
+	attr["crossorigin"] = crossorigin
 
 	for (key, value) in attributes {
 		attr[key] = value
@@ -266,4 +270,24 @@ public func meta(
 	}
 	
 	return .element("meta", attr, children().asNode())
+}
+
+public func script(
+	src : String? = nil,
+	integrity : String? = nil,
+	crossorigin : String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	attr["src"] = src
+	attr["integrity"] = integrity
+	attr["crossorigin"] = crossorigin
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("script", attr, children().asNode())
 }
