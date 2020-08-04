@@ -60,7 +60,7 @@ extension Node: TextOutputStreamable {
 
 			
 			
-			if hasChildren(node: child!) {
+			if hasChildren(node: child!) || !isVoidElement(name: name) {
 				
 				target.write(">")
 
@@ -145,6 +145,19 @@ private extension Node {
 			return children.count > 0
 			default:
 				return false
+		}
+	}
+}
+
+private extension Node {
+	func isVoidElement(name: String) -> Bool {
+		switch name {
+		case "area","base","br","col","command","embed",
+			 "hr","img","input","keygen","link","meta","param",
+			 "source","track","wbr":
+			return true
+		default:
+			return false
 		}
 	}
 }
