@@ -31,7 +31,7 @@ final class swift_html_dslTests: XCTestCase {
 								}
 							}
 						}
-						div(class: "navBarRight") {
+						div(class: "navBarRight", id: "mainmenu") {
 							ul {
 								li {
 									a (href: "#home") { "Home" }

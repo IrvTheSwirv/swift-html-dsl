@@ -59,11 +59,13 @@ public func body(
 public func div(
 	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	id : String? = nil,
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
 
 	attributes["class"] = `class`
+	attributes["id"] = id
 
 	for (key, value) in attributes {
 		attributes[key] = value
