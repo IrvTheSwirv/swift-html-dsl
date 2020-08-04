@@ -263,5 +263,5 @@ public func meta(
 		attr[key] = value
 	}
 	
-	return .element("header", attr, children().asNode())
+	return .element("meta", attr, children().asNode())
 }
