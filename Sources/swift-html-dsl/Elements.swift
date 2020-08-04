@@ -256,6 +256,7 @@ public func meta(
 	
 	name : String? = nil,
 	content : String? = nil,
+	charset : String? = nil,
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 	
@@ -264,6 +265,7 @@ public func meta(
 	
 	attr["name"] = name
 	attr["content"] = content
+	attr["charset"] = charset
 
 	for (key, value) in attributes {
 		attr[key] = value
