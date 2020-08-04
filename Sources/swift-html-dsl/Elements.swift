@@ -9,8 +9,8 @@ import Foundation
 
 public func html(
 	
-	attributes: [String: String] = [:],
 	lang : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 	
 ) -> Node {
@@ -40,8 +40,8 @@ public func head(
 
 public func body(
 	
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 	
 ) -> Node {
@@ -57,9 +57,9 @@ public func body(
 }
 
 public func div(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
 	id : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -75,8 +75,8 @@ public func div(
 }
 
 public func h1(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -91,8 +91,8 @@ public func h1(
 }
 
 public func h2(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -107,8 +107,8 @@ public func h2(
 }
 
 public func title(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -123,11 +123,11 @@ public func title(
 }
 
 public func canvas(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
 	width : String? = nil,
 	height : String? = nil,
 	style : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -145,8 +145,8 @@ public func canvas(
 }
 
 public func nav(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -161,9 +161,9 @@ public func nav(
 }
 
 public func a(
-	attributes: [String: String] = [:],
 	href : String? = nil,
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -179,10 +179,10 @@ public func a(
 }
 
 public func link(
-	attributes: [String: String] = [:],
 	style : String? = nil,
 	rel : String? = nil,
 	href : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -199,8 +199,8 @@ public func link(
 }
 
 public func ul(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -215,8 +215,8 @@ public func ul(
 }
 
 public func li(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
@@ -231,8 +231,8 @@ public func li(
 }
 
 public func header(
-	attributes: [String: String] = [:],
 	`class` : String? = nil,
+	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attributes: [String: String] = [:]
