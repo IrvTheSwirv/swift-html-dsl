@@ -293,3 +293,37 @@ public func script(
 	
 	return .element("script", attr, children().asNode())
 }
+
+public func button(
+	type : String? = nil,
+	`class` : String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	attr["type"] = type
+	attr["class"] = `class`
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("button", attr, children().asNode())
+}
+
+public func span(
+	`class` : String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	attr["class"] = `class`
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("span", attr, children().asNode())
+}
