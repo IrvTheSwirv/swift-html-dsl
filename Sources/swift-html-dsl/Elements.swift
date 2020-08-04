@@ -327,3 +327,19 @@ public func span(
 	
 	return .element("span", attr, children().asNode())
 }
+
+public func p(
+	`class` : String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	attr["class"] = `class`
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("p", attr, children().asNode())
+}
