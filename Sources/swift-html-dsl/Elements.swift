@@ -232,12 +232,14 @@ public func li(
 
 public func header(
 	`class` : String? = nil,
+	id: String? = nil,
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	var attr: [String: String] = [:]
 	
 	attr["class"] = `class`
+	attr["id"] = id
 
 	for (key, value) in attributes {
 		attr[key] = value
