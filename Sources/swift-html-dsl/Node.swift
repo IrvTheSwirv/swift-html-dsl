@@ -79,7 +79,7 @@ extension Node: TextOutputStreamable {
 				target.write(name)
 				target.write(">")
 			} else {
-				target.write("/>")
+				target.write(" />")
 			}
 		case let .text(value):
 			if !didVisitTrim {
