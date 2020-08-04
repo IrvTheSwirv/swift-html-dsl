@@ -245,3 +245,23 @@ public func header(
 	
 	return .element("header", attr, children().asNode())
 }
+
+public func meta(
+	
+	name : String? = nil,
+	content : String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+	
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	attr["name"] = name
+	attr["content"] = content
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("header", attr, children().asNode())
+}

@@ -11,6 +11,7 @@ final class swift_html_dslTests: XCTestCase {
 		
 		head {
 			title { "App HTML Template" }
+			meta(name:"viewport", content:"width=device-width, initial-scale=1")
 			link(style: "text/css", rel: "stylesheet", href: "css/styles.css")
 		}
 		
