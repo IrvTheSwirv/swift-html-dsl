@@ -375,3 +375,19 @@ public func img(
 	
 	return .element("img", attr, children().asNode())
 }
+
+public func footer(
+	`class` : String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	attr["class"] = `class`
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("footer", attr, children().asNode())
+}
