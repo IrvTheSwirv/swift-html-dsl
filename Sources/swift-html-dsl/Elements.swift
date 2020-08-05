@@ -356,3 +356,22 @@ public func br(
 	
 	return .element("br", attr, children().asNode())
 }
+
+public func img(
+	src: String? = nil,
+	alt: String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	
+	var attr: [String: String] = [:]
+	
+	attr["src"] = src
+	attr["alt"] = alt
+	
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("img", attr, children().asNode())
+}
