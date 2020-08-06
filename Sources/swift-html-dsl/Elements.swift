@@ -358,14 +358,17 @@ public func br(
 }
 
 public func img(
+	`class` : String? = nil,
 	src: String? = nil,
 	alt: String? = nil,
+	
 	attributes: [String: String] = [:],
 	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
 ) -> Node {
 	
 	var attr: [String: String] = [:]
 	
+	attr["class"] = `class`
 	attr["src"] = src
 	attr["alt"] = alt
 	
