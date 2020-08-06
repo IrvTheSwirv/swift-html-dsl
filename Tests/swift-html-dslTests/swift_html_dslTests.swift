@@ -7,7 +7,10 @@ import XCTest
 final class swift_html_dslTests: XCTestCase {
     func testExample() {
 		
-	let doc = html(lang: "en-GB") {
+	let doc =
+		doctype(name: "html") {
+			
+			html(lang: "en-GB") {
 		
 		head {
 			title { "App HTML Template" }
@@ -46,7 +49,10 @@ final class swift_html_dslTests: XCTestCase {
 			
 			div()
 		}
-	}
+			}
+			
+		}
+		
 		
 		print(String(describing: doc))
     }

@@ -391,3 +391,12 @@ public func footer(
 	
 	return .element("footer", attr, children().asNode())
 }
+
+
+public func doctype(
+	name : String,
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([] ) }
+) -> Node {
+	
+	return .documentType(name, children().asNode())
+}

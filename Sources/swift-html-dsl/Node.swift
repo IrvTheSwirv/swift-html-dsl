@@ -15,7 +15,7 @@ public enum Node :Equatable {
 	
 	case comment(String)
 	
-	case documentType(String)
+	indirect case documentType(String, Node?)
 	
 	case fragment([Node])
 	
@@ -92,10 +92,12 @@ extension Node: TextOutputStreamable {
 			target.write("<!-- ")
 			target.write(value)
 			target.write(" -->")
-		case let .documentType(name):
+		case let .documentType(name, child):
 			target.write("<!DOCTYPE ")
 			target.write(name)
 			target.write(">")
+			child?.write(to: &target, depth: &depth, didVisitTrim: &didVisitTrim)
+			
 		case let .fragment(children):
 			for child in children {
 				child.write(to: &target, depth: &depth, didVisitTrim: &didVisitTrim)
