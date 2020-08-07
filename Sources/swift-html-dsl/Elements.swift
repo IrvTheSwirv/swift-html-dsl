@@ -106,6 +106,22 @@ public func h2(
 	return .element("h2", attr, children().asNode())
 }
 
+public func h3(
+	`class` : String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+	
+	attr["class"] = `class`
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("h3", attr, children().asNode())
+}
+
 public func title(
 	`class` : String? = nil,
 	attributes: [String: String] = [:],
@@ -422,4 +438,17 @@ public func section(
 	}
 	
 	return .element("section", attr, children().asNode())
+}
+
+public func strong(
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("strong", attr, children().asNode())
 }
