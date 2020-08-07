@@ -403,3 +403,23 @@ public func doctype(
 	
 	return .documentType(name, children().asNode())
 }
+
+public func section(
+	`class` : String? = nil,
+	id : String? = nil,
+	style: String? = nil,
+	attributes: [String: String] = [:],
+	@NodeBuilder children: () -> ConvertableNode = { Node.fragment([]) }
+) -> Node {
+	var attr: [String: String] = [:]
+
+	attr["class"] = `class`
+	attr["id"] = id
+	attr["style"] = style
+
+	for (key, value) in attributes {
+		attr[key] = value
+	}
+	
+	return .element("section", attr, children().asNode())
+}
